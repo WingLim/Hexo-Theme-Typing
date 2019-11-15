@@ -1,15 +1,20 @@
+# Custom favicon name
 favicon: favicon.png
 
+# Separate Post title and Blog title
 separator: '|'
 
+# Index Nav menu
 menu:
   Archives: /archives
   About: /about
 
+# Index GitHub Link
 github:
   name:
   link:
 
+# Footer infomation
 footer:
   copyright:
   author:
