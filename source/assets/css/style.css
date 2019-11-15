@@ -2,6 +2,7 @@ html {
     font-family: -apple-system,BlinkMacSystemFont,system-ui,PingFang SC,Hiragino Sans GB,Noto Sans CJK SC,Microsoft YaHei,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
     font-size: 1rem;
     color: #343434;
+    line-height: 1.75;
 }
 
 @media screen and (min-width: 320px) {
@@ -26,6 +27,14 @@ p, pre, ul {
 code, pre {
     font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
     font-size: 1em;
+}
+
+code {
+    padding: .25em .5em;
+    font-size: 85%;
+    color: #bf616a;
+    background-color: #f9f9f9;
+    border-radius: 3px;
 }
 
 table {
@@ -105,6 +114,7 @@ article header {
     color: rgba(0,0,0,.07);
     z-index: 1;
     position: absolute;
+    text-transform: uppercase;
     top: 100%;
     right: 0;
     -webkit-transform: translate(0,-50%);
@@ -168,6 +178,10 @@ article.post h1 {
 
 article.post section{
     text-align: justify;
+}
+
+article.post section {
+    margin-top: 3rem;
 }
 
 
