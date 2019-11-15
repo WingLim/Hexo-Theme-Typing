@@ -2,7 +2,16 @@
         <a href="/"><-- back</a>
     </div>
     <main>
-        <h1>Archives</h1>
+        <% 
+            var pagetitle = '';
+            if (is_tag()){
+                pagetitle = 'Tag: ' + page.tag;
+            }
+            if (is_archive()){
+                pagetitle = 'Archives';
+            }
+        %>
+        <h1><%= pagetitle %></h1>
         <ul>
             <% page.posts.each(function(post){ %>
             <li>
