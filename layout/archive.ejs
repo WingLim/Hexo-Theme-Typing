@@ -1,0 +1,14 @@
+    <div class="post-back">
+        <a href="/"><-- back</a>
+    </div>
+    <main>
+        <h1>Archives</h1>
+        <ul>
+            <% page.posts.each(function(post){ %>
+            <li>
+                <span class="date"><%= date(post.date, "YYYY MMM DD") %></span>
+                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+             </li>
+            <% }) %>
+        </ul>
+    </main>

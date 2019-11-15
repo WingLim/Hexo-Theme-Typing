@@ -1,0 +1,41 @@
+<header>
+    <h1 class="blog-title"><%- config.title %></h1>
+    <nav>
+        <ul>
+            <% for (name in theme.menu) { %>
+            <li><a href="<%- url_for(theme.menu[name]) %>"><%- __(name) %></a></li>
+            <% } %>
+            <% if(theme.github.name || theme.github.link){ %>
+            <li><a href="<%= theme.github.link %>">@<%= theme.github.name %></a></li>
+            <% } %>
+        </ul>
+    </nav>
+</header>
+<main>
+    <% page.posts.each(function(post){ %>
+    <article class="index">
+        <header>
+            <span class="date"><%= date(post.date, "MMM DD YYYY") %></span>
+            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </header>
+        <section>
+            <% if (post.excerpt){ %>
+                <%- post.excerpt %>
+                    <a class="article-more-link" href="<%- url_for(post.path) %>#more">read more»</a>
+            <% } else { %>
+                <%- post.content %>
+            <% } %>
+        </section>
+    </article>
+    <% }) %>
+</main>
+<% if(page.prev || page.next){ %>
+<div class="pagination">
+        <% if(page.prev){ %>
+            <a class="prev" href="<%= page.prev_link %>"><<- Newer</a>
+        <% } %>
+        <% if(page.next){ %>
+            <a class="next" href="<%= page.next_link %>">Older ->></a>
+        <% } %>
+</div>
+<% } %>

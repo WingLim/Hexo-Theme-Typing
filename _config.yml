@@ -1,0 +1,15 @@
+favicon: favicon.png
+
+separator: '|'
+
+menu:
+  Archives: /archives
+  About: /about
+
+github:
+  name:
+  link:
+
+footer:
+  copyright:
+  author:

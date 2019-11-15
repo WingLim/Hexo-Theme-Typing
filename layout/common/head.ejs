@@ -1,0 +1,35 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <% if (theme.favicon){ %>
+    <link rel="shortcut icon" type="image/x-icon" href="<%= url_for(theme.favicon) %>?v=1.02">
+    <% } %>
+    <%- css('/assets/css/normalize.css') %>
+    <%- css('/assets/css/atom-one-light.css') %>
+    <%- css('/assets/css/style.css') %>
+    <%
+        var title = config.title;
+        var separator = theme.separator;
+        separator = ` ${separator} `;
+    
+        if (is_home()){
+          if (config.subtitle) {
+            title += separator + config.subtitle;
+          }
+        }
+    
+        if (is_archive()) {
+          title = __('Archives') + separator + title;
+        }
+
+        if (is_tag()) {
+          title = __('Tag: ') + page.tag + separator + title;
+        }
+    
+        if (page.title) {
+          title = page.title + separator + title;
+        }
+    %>
+    <title><%= title %></title>
+</head>
