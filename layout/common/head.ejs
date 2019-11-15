@@ -13,12 +13,6 @@
         var separator = theme.separator;
         separator = ` ${separator} `;
     
-        if (is_home()){
-          if (config.subtitle) {
-            title += separator + config.subtitle;
-          }
-        }
-    
         if (is_archive()) {
           title = __('Archives') + separator + title;
         }
