@@ -8,13 +8,13 @@
             <div class="post-letter"><%= page.title.charAt(0) %></div>
             <div class="meta">
                 <span class="date"><%= date(page.date, "MMMM DD YYYY") %></span>
-                <div class="tags">
-                    <% if (page.tags && page.tags.length){ %>
-                        <% (page._tags || page.tags).forEach(tag => { %>
-                            <span><a class="tag" href="<%- url_for(tag.path) %>">#<%= tag.name %></a></span>
-                        <% }) %>
-                    <% } %>
-                </div>
+                <% if (page.tags && page.tags.length){ %>
+                    <div class="tags">
+                    <% (page._tags || page.tags).forEach(tag => { %>
+                        <span><a class="tag" href="<%- url_for(tag.path) %>">#<%= tag.name %></a></span>
+                    <% }) %>
+                    </div>
+                <% } %>
             </div>
         </header>
         <section>
