@@ -7,7 +7,6 @@
             <h1><%= page.title %></h1>
             <% if(is_post()){ %>
             <div class="cat"><% page.categories.forEach(cat => { %><%= cat.name %><% }) %></div>
-            <% } %>
             <div class="meta">
                 <span class="date"><%= date(page.date, "MMMM DD YYYY") %></span>
                 <% if (page.tags && page.tags.length){ %>
@@ -18,6 +17,7 @@
                     </div>
                 <% } %>
             </div>
+            <% } %>
         </header>
         <section>
             <%- page.content %>
