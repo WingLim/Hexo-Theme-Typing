@@ -1,23 +1,27 @@
     <div class="post-back">
-        <a href="/"><-- back</a>
+        <a href="/"><-- home</a>
     </div>
     <main>
-        <% 
-            var pagetitle = '';
-            if (is_tag()){
-                pagetitle = 'Tag: ' + page.tag;
-            }
-            if (is_archive()){
-                pagetitle = 'Archives';
-            }
-        %>
-        <h1><%= pagetitle %></h1>
-        <ul>
-            <% page.posts.each(function(post){ %>
-            <li>
-                <span class="date"><%= date(post.date, "YYYY MMM DD") %></span>
-                <a href="<%- url_for(post.path) %>"><%= post.title %></a>
-             </li>
-            <% }) %>
-        </ul>
+        <article class="post">
+            <header>
+                <% 
+                    var pagetitle = '';
+                    if (is_tag()){
+                        pagetitle = 'Tag: ' + page.tag;
+                    }
+                    if (is_archive()){
+                        pagetitle = 'Archives';
+                    }
+                %>
+                <h1><%= pagetitle %></h1>
+            </header>
+            <ul>
+                <% page.posts.each(function(post){ %>
+                <li>
+                    <span class="date"><%= date(post.date, "YYYY MMM DD") %></span>
+                    <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+                </li>
+                <% }) %>
+            </ul>
+        </article>
     </main>
