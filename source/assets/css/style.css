@@ -83,7 +83,7 @@ header {
         flex-direction: column;
     }
 
-    .post-letter {
+    .cat {
         display: none;
     }
 }
@@ -107,7 +107,7 @@ article header {
     margin-bottom: 1rem;
 }
 
-.post-letter {
+.cat {
     line-height: 1.2;
     font-size: 20rem;
     font-weight: bold;
@@ -115,11 +115,8 @@ article header {
     z-index: 1;
     position: absolute;
     text-transform: uppercase;
-    top: 100%;
-    right: 0;
-    -webkit-transform: translate(0,-50%);
-    -ms-transform: translate(0,-50%);
-    transform: translate(0,-50%);
+    top: -30%;
+    left: -1%;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;

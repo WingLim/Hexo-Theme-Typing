@@ -5,7 +5,7 @@
     <article class="post">
         <header>
             <h1><%= page.title %></h1>
-            <div class="post-letter"><%= page.title.charAt(0) %></div>
+            <div class="cat"><% page.categories.forEach(cat => { %><%= cat.name %><% }) %></div>
             <div class="meta">
                 <span class="date"><%= date(page.date, "MMMM DD YYYY") %></span>
                 <% if (page.tags && page.tags.length){ %>
