@@ -1,29 +1,53 @@
 <head>
+    <%
+        var keywords = theme.keywords;
+        if (page.tags && page.tags.each) {
+            page.tags.each(function(tag) {
+                keywords += "," + tag.name;
+            })
+        }
+
+        var description = config.description;
+        if (page.description) {
+        description = page.description;
+        } else if (page.excerpt) {
+        description = strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
+        } else if (page.content && theme.post.excerpt) {
+        description = strip_html(truncate(page.content, {length: theme.post.excerpt })).replace(/[\r\n]/g, "");
+        }
+
+        var title = page.title;
+        var separator = theme.separator;
+        separator = ` ${separator} `;
+        if (is_archive()) {
+          title = __('Archives') + separator + title;
+        }
+        if (is_tag()) {
+          title = __('Tag: ') + page.tag + separator + title;
+        }
+        if (title) {
+            title += separator + config.title;
+        } else {
+            title = config.title;
+            if (config.subtitle) title += separator + config.subtitle;
+        }
+    
+    %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta name="applicable-device"content="pc,mobile">
+    <% if (keywords) { %>
+    <meta name="keywords" content="<%= keywords %>">
+    <% } %>
+    <meta name="description" content="<%= description %>">
     <% if (theme.favicon){ %>
     <link rel="shortcut icon" type="image/x-icon" href="<%= url_for(theme.favicon) %>?v=1.02">
     <% } %>
     <%- css('/assets/css/normalize.css') %>
     <%- css('/assets/css/atom-one-light.css') %>
     <%- css('/assets/css/style.css') %>
-    <%
-        var title = config.title;
-        var separator = theme.separator;
-        separator = ` ${separator} `;
-    
-        if (is_archive()) {
-          title = __('Archives') + separator + title;
-        }
-
-        if (is_tag()) {
-          title = __('Tag: ') + page.tag + separator + title;
-        }
-    
-        if (page.title) {
-          title = page.title + separator + title;
-        }
-    %>
     <title><%= title %></title>
 </head>

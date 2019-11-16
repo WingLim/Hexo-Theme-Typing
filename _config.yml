@@ -1,6 +1,12 @@
 # Custom favicon name
 favicon: favicon.png
 
+# Page languagge
+lang: zh-cn
+
+# Keyword for SEO
+keywords: "Typing"
+
 # Separate Post title and Blog title
 separator: '|'
 
