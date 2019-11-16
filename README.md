@@ -14,11 +14,21 @@ theme: Typing
 
 3. Configure theme
 
-`Typing/_config.yml`: 
+Notice: There have a lang setting in `Tping/_config.yml` , set html lang in it rather than in `<hexo root>/_config.yml` .
+
+Because if you set 'zh-cn' language in `<hexo root>/_config.yml` , the post generator will generate Chinese date style such as '十一月'.
+
 
 ```yaml
+# Typing/_config.yml
 # Custom favicon name
 favicon: favicon.png
+
+# Page languagge
+lang: zh-cn
+
+# Keyword for SEO
+keywords: "Typing"
 
 # Separate Post title and Blog title
 separator: '|'
@@ -43,6 +53,6 @@ footer:
 
 [ ] Lazy load image
 
-[ ] Optimizate SEO
+[x] Optimizate SEO
 
 [ ] Comment
