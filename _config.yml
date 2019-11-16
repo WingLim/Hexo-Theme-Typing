@@ -20,6 +20,18 @@ github:
   name:
   link:
 
+# Comment settings
+comment:
+  enable: false
+  type: disqus
+  disqus:
+    shortname:
+    mirror: false
+    api: 
+    apiKey: 
+    admin: 
+    adminLabel: 
+
 # Footer infomation
 footer:
   copyright:

@@ -180,8 +180,30 @@ article.post section{
 
 article.post section {
     margin-top: 1.8rem;
+    margin-bottom: 1rem;
 }
 
+.post-end {
+    position: relative;
+    margin: 3rem 0;
+    color: #ddd;
+    border-bottom: .2em dashed #eee;
+}
+
+.post-end:after {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    padding: .5em;
+    background: #fff;
+    content: attr(data-text);
+}
+
+.comments {
+    padding-top: 1rem;
+}
 
 span.date {
     color: #9a9a9a;

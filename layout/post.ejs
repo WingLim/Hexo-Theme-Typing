@@ -22,5 +22,13 @@
         <section>
             <%- page.content %>
         </section>
+        <div class="post-end" data-text="完"></div>
     </article>
+    <% if (is_post()){ %>
+        <% if(theme.comment.enable && theme.comment.type){ %>
+        <div class="comments">
+            <%- partial('comment/' + theme.comment.type, {comment: theme.comment}) %>
+        </div>
+        <% } %>
+    <% } %>
 </main>

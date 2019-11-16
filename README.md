@@ -43,6 +43,18 @@ github:
   name:
   link:
 
+# Comment settings
+comment:
+  enable: false
+  type: disqus
+  disqus:
+    shortname:
+    mirror: false
+    api: 
+    apiKey: 
+    admin: 
+    adminLabel: 
+
 # Footer infomation
 footer:
   copyright:
@@ -53,8 +65,6 @@ footer:
 
 - [x] Optimizate SEO
 
-- [ ] Lazy load image
-
-- [ ] Comment
+- [x] Comment
 
 - [ ] Dark Mode
