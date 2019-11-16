@@ -25,6 +25,9 @@
         if (is_tag()) {
           title = __('Tag: ') + page.tag + separator + title;
         }
+        if (is_category()) {
+            title = __('Category: ') + page.category;
+        }
         if (title) {
             title += separator + config.title;
         } else {

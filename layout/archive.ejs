@@ -12,6 +12,9 @@
                     if (is_archive()){
                         pagetitle = 'Archives';
                     }
+                    if (is_category()){
+                        pagetitle = 'Category: ' + page.category;
+                    }
                 %>
                 <h1><%= pagetitle %></h1>
             </header>
