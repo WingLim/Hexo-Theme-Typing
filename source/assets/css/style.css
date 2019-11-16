@@ -109,13 +109,13 @@ article header {
 
 .cat {
     line-height: 1.2;
-    font-size: 20rem;
+    font-size: 18rem;
     font-weight: bold;
     color: rgba(0,0,0,.07);
     z-index: 1;
     position: absolute;
     text-transform: uppercase;
-    top: -30%;
+    top: -25%;
     left: -1%;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -171,6 +171,7 @@ article.index {
 article.post h1 {
     width: fit-content;
     border-bottom: 3px solid #272727;
+    margin-bottom: .5rem;
 }
 
 article.post section{
@@ -178,7 +179,7 @@ article.post section{
 }
 
 article.post section {
-    margin-top: 3rem;
+    margin-top: 1.8rem;
 }
 
 
