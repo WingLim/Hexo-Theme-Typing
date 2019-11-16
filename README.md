@@ -51,8 +51,10 @@ footer:
 
 ## TODO
 
-[ ] Lazy load image
+- [x] Optimizate SEO
 
-[x] Optimizate SEO
+- [ ] Lazy load image
 
-[ ] Comment
+- [ ] Comment
+
+- [ ] Dark Mode
