@@ -10,10 +10,13 @@
         var description = config.description;
         if (page.description) {
         description = page.description;
-        } else if (page.excerpt) {
-        description = strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
-        } else if (page.content && theme.post.excerpt) {
-        description = strip_html(truncate(page.content, {length: theme.post.excerpt })).replace(/[\r\n]/g, "");
+        }
+        if(is_post()){
+            if (page.excerpt) {
+            description = strip_html(page.excerpt).replace(/^s*/, '').replace(/s*$/, '');
+            } else if (page.content) {
+            description = strip_html(truncate(page.content, {length: 140 })).replace(/[\r\n]/g, "");
+            }
         }
 
         var title = page.title;
