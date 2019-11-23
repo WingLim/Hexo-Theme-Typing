@@ -23,10 +23,10 @@
         var separator = theme.separator;
         separator = ` ${separator} `;
         if (is_archive()) {
-          title = __('Archives') + separator + title;
+          title = __('Archives');
         }
         if (is_tag()) {
-          title = __('Tag: ') + page.tag + separator + title;
+          title = __('Tag: ') + page.tag;
         }
         if (is_category()) {
             title = __('Category: ') + page.category;
