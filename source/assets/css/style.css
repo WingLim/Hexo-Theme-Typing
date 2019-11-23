@@ -16,7 +16,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    border-bottom: .1em solid #3170a7;
 }
 
 p, pre, ul {
@@ -133,7 +133,6 @@ article.index {
 
 article.post h1 {
     width: fit-content;
-    border-bottom: 3px solid #272727;
     margin-bottom: .5rem;
 }
 
@@ -154,7 +153,7 @@ article.post section {
     z-index: 1;
     position: absolute;
     text-transform: uppercase;
-    top: -25%;
+    top: -55%;
     left: -1%;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -193,26 +192,8 @@ article.post section {
     padding-inline-start: .9rem;
 }
 
-.post-end {
-    position: relative;
-    margin: 3rem 0;
-    color: #ddd;
-    border-bottom: .2em dashed #eee;
-}
-
-.post-end:after {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
-    padding: .5em;
-    background: #fff;
-    content: attr(data-text);
-}
-
 .comments {
-    padding-top: 1rem;
+    padding-top: 4rem;
 }
 
 span.date {
@@ -221,8 +202,8 @@ span.date {
 }
 
 span.date::after {
-    content: '-';
-    padding: 0 .5rem;
+    content: '\00a0-\00a0';
+    
 }
 
 footer {
@@ -307,4 +288,16 @@ blockquote p:last-child {
 
 .pagination .next {
     margin-left: auto;
+}
+
+#load-disqus {
+    cursor: pointer;
+}
+
+#load-disqus:hover {
+    border: none;
+}
+
+.archive {
+    list-style: none;
 }
