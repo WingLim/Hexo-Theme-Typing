@@ -1,7 +1,11 @@
+<div style="text-align:center;">
+    <a id="load-disqus" onclick="load_comment();">加载 Disqus 评论</a>
+</div>
 <div id="disqus_thread"></div>
     <% if (comment.disqus.mirror) { %>
     <script>
-        (function(d){
+        function load_comment() {
+        var d = document;
         window.DISQUS = null;
         var css = d.createElement("link");
         css.rel = "stylesheet";
@@ -24,7 +28,8 @@
             });
         }
         d.head.appendChild(js);
-        })(document);
+        d.getElementById('load-disqus').remove();
+        };
     </script>
     <% } else { %>
     <script>
