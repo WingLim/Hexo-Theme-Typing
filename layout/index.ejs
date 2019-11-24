@@ -15,13 +15,12 @@
     <% page.posts.each(function(post){ %>
     <article class="index">
         <header>
-            <span class="date"><%= date(post.date, "MMM DD YYYY") %></span>
             <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <span class="date"> / <%= date(post.date, "MMM DD YYYY") %></span>
         </header>
         <section>
             <% if (post.excerpt){ %>
                 <%- post.excerpt %>
-                    <a class="article-more-link" href="<%- url_for(post.path) %>#more">read more»</a>
             <% } else { %>
                 <%- post.content %>
             <% } %>
