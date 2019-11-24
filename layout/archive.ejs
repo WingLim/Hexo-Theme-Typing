@@ -21,7 +21,7 @@
             <ul class="archive">
                 <% page.posts.each(function(post){ %>
                 <li>
-                    <span class="date"><%= date(post.date, "MMM DD YYYY") %></span>
+                    <span class="date"><%= date(post.date, "YYYY MMM DD") %></span>
                     <a href="<%- url_for(post.path) %>"><%= post.title %></a>
                 </li>
                 <% }) %>
