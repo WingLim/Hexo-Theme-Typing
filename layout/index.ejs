@@ -1,12 +1,12 @@
 <header class="index-header">
     <h1 class="blog-title"><%- config.title %></h1>
-    <nav>
+    <nav class="navTabs">
         <ul>
             <% for (name in theme.menu) { %>
-            <li><a href="<%- url_for(theme.menu[name]) %>"><%- __(name) %></a></li>
+            <li><a class="navTabs-item" href="<%- url_for(theme.menu[name]) %>"><%- __(name) %></a></li>
             <% } %>
             <% if(theme.github.name || theme.github.link){ %>
-            <li><a href="<%= theme.github.link %>">@<%= theme.github.name %></a></li>
+            <li><a class="navTabs-item" href="<%= theme.github.link %>">@<%= theme.github.name %></a></li>
             <% } %>
         </ul>
     </nav>
@@ -15,7 +15,7 @@
     <% page.posts.each(function(post){ %>
     <article class="index">
         <header>
-            <a href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
             <span class="date"> / <%= date(post.date, "MMM DD YYYY") %></span>
         </header>
         <section>
