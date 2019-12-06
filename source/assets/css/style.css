@@ -126,7 +126,7 @@ img {
 
 .blog-title {
     margin: 0;
-    font-weight: normal;
+    font-weight: bold;
 }
 
 article header {
@@ -159,6 +159,10 @@ article.post section{
 article.post section {
     margin-top: 2rem;
     margin-bottom: 1rem;
+}
+
+.counter {
+    font-weight: 700;
 }
 
 .meta {
