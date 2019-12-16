@@ -52,8 +52,8 @@
     <% if (theme.favicon){ %>
     <link rel="shortcut icon" type="image/x-icon" href="<%= url_for(theme.favicon) %>?v=1.02">
     <% } %>
-    <%- css('/assets/css/normalize.css') %>
-    <%- css('/assets/css/atom-one-light.css') %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/winglim/Hexo-Theme-Typing@1.0/source/assets/css/normalize.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/winglim/Hexo-Theme-Typing@1.0/source/assets/css/atom-one-light.css">
     <%- css('/assets/css/style.css') %>
     <title><%= title %></title>
 </head>
