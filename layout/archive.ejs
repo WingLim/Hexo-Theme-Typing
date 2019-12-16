@@ -3,18 +3,18 @@ var title = "";
 
 var counter = 0;
 if (is_archive()) {
-  title = "Archives";
-  couter = site.posts.length;
+  title = "归档";
+  counter = site.posts.length;
 } else if (is_category()) {
-  title = "Category" + ': ' + page.category;
-  couter = _.filter(site.posts.data, post => {
+  title = "分类: " + page.category;
+  counter = _.filter(site.posts.data, post => {
     return post.categories.data.filter(
-      doc => doc.name === page.categoryCT
+      doc => doc.name === page.category
     ).length > 0;
   }).length
 } else if (is_tag()) {
-  title = "Tag" + ': ' + page.tag;
-  couter = _.filter(site.posts.data, post => {
+  title = "标签: " + page.tag;
+  counter = _.filter(site.posts.data, post => {
     return post.tags.data.filter(
       doc => doc.name === page.tag
     ).length > 0;
@@ -31,7 +31,7 @@ var posts = _.groupBy(page.posts.data, post => post.date.year());
         <h1><%- title %></h1>
     </header>
     <section>
-        <p class="counter">目前共有 <%= couter %> 篇文章</p>
+        <p class="counter">目前共有 <%= counter %> 篇文章</p>
         <% _.forInRight(posts, function(posts, year) { %>
         <h2 class="year"><%= year %></h2>
         <ul class="archive">

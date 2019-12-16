@@ -23,13 +23,13 @@
         var separator = theme.separator;
         separator = ` ${separator} `;
         if (is_archive()) {
-          title = __('Archives');
+          title = "归档";
         }
         if (is_tag()) {
-          title = __('Tag: ') + page.tag;
+          title = "标签: " + page.tag;
         }
         if (is_category()) {
-            title = __('Category: ') + page.category;
+            title = "分类: " + page.category;
         }
         if (title) {
             title += separator + config.title;
