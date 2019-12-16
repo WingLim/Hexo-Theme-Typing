@@ -7,7 +7,8 @@
             <h1><%= page.title %></h1>
             <% if(is_post()){ %>
             <div class="meta">
-                <span class="date"><%= date(page.date, "MMMM DD, YYYY") %></span>
+                <time class="timeago" datetime="<%= page.date.format("YYYY-MM-DD hh:mm:ss") %>"><%= page.date.format("MMMM DD, YYYY") %></time>
+                <span class="middotDivider"></span>
                 <% if (page.tags && page.tags.length){ %>
                     <div class="tags">
                     <% (page._tags || page.tags).forEach(tag => { %>

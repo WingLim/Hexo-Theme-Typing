@@ -1,4 +1,12 @@
+<% if(is_home()) { %>
 <footer>
     <p>blog since <%- theme.footer.copyright %></p>
     <p>*<%- config.subtitle %></p>
 </footer>
+<% } %>
+<% if(is_home() || is_post()){ %>
+<script type="text/javascript" src="https://unpkg.com/timeago.js@4.0.1/dist/timeago.min.js"></script>
+<script>
+    timeago.render(document.querySelectorAll('.timeago'), 'zh_CN');
+</script>
+<% } %>

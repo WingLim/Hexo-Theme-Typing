@@ -1,5 +1,9 @@
 <header class="index-header">
+    <% if(theme.sitelogo){ %>
+    <img class="blog-logo" src="<%= theme.sitelogo %>">
+    <% }else{ %>
     <h1 class="blog-title"><%- config.title %></h1>
+    <% } %>
     <nav class="navTabs">
         <ul>
             <% for (name in theme.menu) { %>
@@ -16,7 +20,6 @@
     <article class="index">
         <header>
             <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
-            <span class="date"> / <%= date(post.date, "MMM DD YYYY") %></span>
         </header>
         <section>
             <% if (post.excerpt){ %>
@@ -24,6 +27,13 @@
             <% } else { %>
                 <%- post.content %>
             <% } %>
+            <div class="post-meta">
+            <% post.categories.forEach(function(item){ %>
+            <a href="<%= item.permalink %>"><%= item.name %></a> 
+            <% }); %>
+            <span class="middotDivider"></span>
+            <time class="timeago" datetime="<%= post.date.format("YYYY-MM-DD hh:mm:ss") %>"><%= post.date.format("MMM DD YYYY") %></time>
+            </div>
         </section>
     </article>
     <% }) %>
