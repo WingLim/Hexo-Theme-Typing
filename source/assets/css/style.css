@@ -83,7 +83,7 @@ img {
 .index-header {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -94,13 +94,8 @@ img {
     .index-header {
         flex-direction: column;
     }
-    
-    .meta {
-        flex-direction: column;
-    }
-
-    .tags::before {
-        display: none;
+    .navTabs {
+        margin-top: .5rem;
     }
 }
 
@@ -129,6 +124,11 @@ img {
     font-weight: bold;
 }
 
+.blog-logo {
+    width: 250px;
+    margin-bottom: 0;
+}
+
 article header {
     flex-direction: column;
     padding-bottom: 0;
@@ -145,6 +145,12 @@ article.index header {
 
 article.index {
     padding-bottom: 2rem;
+    color: rgba(0,0,0,.55);
+}
+
+article.index p {
+    margin-bottom: 0;
+    text-align: justify;
 }
 
 article.post h1 {
@@ -161,6 +167,15 @@ article.post section {
     margin-bottom: 1rem;
 }
 
+.middotDivider {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.middotDivider:before {
+    content: "\00B7";
+}
+
 .counter {
     font-weight: 700;
 }
@@ -171,17 +186,24 @@ article.post section {
     justify-content: flex-start;
 }
 
+.post-meta a {
+    color: inherit;
+}
+
+.post-meta a:hover {
+    color: rgba(0,0,0,.84);
+}
+
+.timeago::before {
+    content: "发布于 ";
+}
+
 .tags, .tags a {
     color: #9a9a9a;
 }
 
 .tags a:hover {
     color: rgba(0,0,0,.68);
-}
-
-.tags::before {
-    content: '•';
-    padding: 0 .5rem;
 }
 
 .footnotes-sep {
