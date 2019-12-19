@@ -22,10 +22,7 @@ if (is_archive()) {
 }
 var posts = _.groupBy(page.posts.data, post => post.date.year());
 %>
-<div class="post-back">
-    <a href="/"><-- home</a>
-</div>
-<main>
+<main class="page">
     <article class="post">
     <header>
         <h1><%- title %></h1>
@@ -37,7 +34,7 @@ var posts = _.groupBy(page.posts.data, post => post.date.year());
         <ul class="archive">
             <% posts.forEach(function(post) { %>
             <li>
-                <span class="date"><%= date(post.date, "MM-DD") %></span>
+                <span class="date"><%= date(post.date, "MM-DD") %> - </span>
                 <a href="<%= url_for(post.path) %>"><%= post.title %></a>
             </li>
             <% }) %>

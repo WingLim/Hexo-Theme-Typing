@@ -1,12 +1,14 @@
-<% if(is_home()) { %>
-<footer>
-    <p>blog since <%- theme.footer.copyright %></p>
-    <p>*<%- config.subtitle %></p>
-</footer>
-<% } %>
 <% if(is_home() || is_post()){ %>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/timeago.js@4.0.1/dist/timeago.min.js"></script>
 <script>
     timeago.render(document.querySelectorAll('.timeago'), 'zh_CN');
 </script>
+<% } %>
+<% if(theme.footer.ga){ %>
+<script>
+// replace following variables to your own
+window.ga_tid = "<%= theme.footer.ga %>";
+window.ga_url = "https://ga.giuem.com";
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@giuem/ga-proxy@1.0.1/dist/ga.min.js" async></script>
 <% } %>

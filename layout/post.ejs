@@ -1,6 +1,3 @@
-<div class="post-back">
-    <a href="/"><-- home</a>
-</div>
 <main>
     <article class="post">
         <header>
@@ -12,7 +9,7 @@
                 <% if (page.tags && page.tags.length){ %>
                     <div class="tags">
                     <% (page._tags || page.tags).forEach(tag => { %>
-                        <span><a class="tag" href="<%- url_for(tag.path) %>">#<%= tag.name %></a></span>
+                        <span><a no-style class="tag" href="<%- url_for(tag.path) %>">#<%= tag.name %></a></span>
                     <% }) %>
                     </div>
                 <% } %>

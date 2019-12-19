@@ -3,6 +3,17 @@
     <%- partial('common/head') %>
 <body>
     <div class="wrapper">
+        <% if(!is_home()){ %>
+            <a no-style href="/" class="post-back">
+                <div>
+                    <svg width="40" height="40">
+                        <circle class="circle-progress" r="18" cy="20" cx="20" stroke-linejoin="round" stroke-linecap="round"></circle>
+                    </svg>
+                    <span class="post-back-icon"></span>
+                </div>
+            Home
+            </a>
+        <% } %>
         <%- body %>
     </div>
     <%- partial('common/footer') %>

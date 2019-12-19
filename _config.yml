@@ -8,7 +8,7 @@ lang: zh-cn
 keywords: "Typing"
 
 # Separate Post title and Blog title
-separator: '|'
+separator: '-'
 
 # Index Nav menu
 menu:
@@ -35,4 +35,5 @@ comment:
 # Footer infomation
 footer:
   copyright:
-  author:
+  beian:
+  ga:

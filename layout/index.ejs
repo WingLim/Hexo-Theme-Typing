@@ -1,25 +1,10 @@
-<header class="index-header">
-    <% if(theme.sitelogo){ %>
-    <img class="blog-logo" src="<%= theme.sitelogo %>">
-    <% }else{ %>
-    <h1 class="blog-title"><%- config.title %></h1>
-    <% } %>
-    <nav class="navTabs">
-        <ul>
-            <% for (name in theme.menu) { %>
-            <li><a class="navTabs-item" href="<%- url_for(theme.menu[name]) %>"><%- __(name) %></a></li>
-            <% } %>
-            <% if(theme.github.name || theme.github.link){ %>
-            <li><a class="navTabs-item" href="<%= theme.github.link %>">@<%= theme.github.name %></a></li>
-            <% } %>
-        </ul>
-    </nav>
-</header>
-<main>
+<div class="index-flex">
+<%- partial('common/nav') %>
+<main class="index" data-title="Posts">
     <% page.posts.each(function(post){ %>
     <article class="index">
         <header>
-            <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+            <a no-style class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
         </header>
         <section>
             <% if (post.excerpt){ %>
@@ -37,14 +22,23 @@
         </section>
     </article>
     <% }) %>
+    <% if(page.prev || page.next){ %>
+    <div class="pagination">
+        <%- paginator({
+            prev_text: '<<- Newer',
+            next_text: 'Older ->>'
+        }) %>
+            
+    </div>
+    <% } %>
+    <% if(is_home()) { %>
+    <footer>
+        <p>blog since <%- theme.footer.copyright %></p>
+        <p>*<%- config.subtitle %></p>
+        <% if(theme.footer.beian){ %>
+            <a class="beian" href="http://beian.miit.gov.cn"><%= theme.footer.beian %></a>
+        <% } %>
+    </footer>
+    <% } %>
 </main>
-<% if(page.prev || page.next){ %>
-<div class="pagination">
-        <% if(page.prev){ %>
-            <a class="prev" href="<%= page.prev_link %>"><<- Newer</a>
-        <% } %>
-        <% if(page.next){ %>
-            <a class="next" href="<%= page.next_link %>">Older ->></a>
-        <% } %>
 </div>
-<% } %>

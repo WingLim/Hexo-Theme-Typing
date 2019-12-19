@@ -1,0 +1,16 @@
+<header class="index-header">
+    <h1 class="blog-title">
+        <a href="/"><%- config.title %></a>
+    </h1>
+    <nav class="navTabs">
+        <ul>
+            <% for (name in theme.menu) { %>
+            <li><a no-style class="navTabs-item" href="<%- url_for(theme.menu[name]) %>"><%- __(name) %></a></li>
+            <span class="middotDivider"></span>
+            <% } %>
+            <% if(theme.github.name || theme.github.link){ %>
+            <li><a no-style class="navTabs-item" href="<%= theme.github.link %>">@<%= theme.github.name %></a></li>
+            <% } %>
+        </ul>
+    </nav>
+</header>
